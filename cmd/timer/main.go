@@ -8,6 +8,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/gen2brain/beeep"
 )
 
 var help = flag.Bool("h", false, "Print this help message and exit.")
@@ -19,8 +21,6 @@ func printHelp() {
 		"Case insensitive.")
 	flag.PrintDefaults()
 }
-
-//var rxSplit = regexp.MustCompile(`(\d+)\s*h(?:ours?)?\s*(\d+)\s*m(?:inutes?)?\s*(\d+)\s*s(?:econds?)?`)
 
 var rxSplit = regexp.MustCompile(`(\d+)\s*(\w+)`)
 
@@ -72,5 +72,8 @@ func main() {
 		}
 	}
 exit:
-	fmt.Print("\rTimer completed.                                                                                  ")
+	fmt.Println("\rTimer completed.                                                                                  ")
+	_ = beeep.Beep(beeep.DefaultFreq*0.96, beeep.DefaultDuration*5)
+	time.Sleep(time.Second)
+	_ = beeep.Beep(beeep.DefaultFreq*0.96, beeep.DefaultDuration*5)
 }
