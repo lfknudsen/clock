@@ -1,4 +1,5 @@
 all: clock.exe stopwatch.exe timer.exe
+	install clock.exe stopwatch.exe timer.exe
 
 clock.exe: cmd/clock/main.go
 	go build -C cmd/clock -o ../../clock.exe
