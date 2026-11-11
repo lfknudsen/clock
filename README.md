@@ -36,11 +36,15 @@ timer 12m30s
 
 ## Compile
 
+If you have an implementation of `make` installed, as well as my
+other programme [install](https://gitlab.com/lfknudsen/install),
+you can execute:
+
 ```
 make
 ```
 
-or
+Alternatively:
 
 
 ```
