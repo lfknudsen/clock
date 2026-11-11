@@ -28,12 +28,6 @@ To start a stopwatch:
 stopwatch
 ```
 
-## Examples
-
-```
-timer 12m30s
-```
-
 ## Compile
 
 If you have an implementation of `make` installed, as well as my
