@@ -1,22 +1,13 @@
-all: clock.exe stopwatch.exe timer.exe
-	install clock.exe stopwatch.exe timer.exe
-
-clock.exe: cmd/clock/main.go
-	go build -C cmd/clock -o ../../clock.exe
-	
-stopwatch.exe: cmd/stopwatch/main.go
-	go build -C cmd/stopwatch -o ../../stopwatch.exe
-
-timer.exe: cmd/timer/main.go
-	go build -C cmd/timer -o ../../timer.exe
-
-gnu:
+all: clock stopwatch timer
 
 clock: cmd/clock/main.go
-	go build -C cmd/clock -o ../../clock
-
+	go build -C cmd/clock -o ../../
+	install
+	
 stopwatch: cmd/stopwatch/main.go
-	go build -C cmd/stopwatch -o ../../stopwatch
+	go build -C cmd/stopwatch -o ../../
+	install
 
 timer: cmd/timer/main.go
-	go build -C cmd/timer -o ../../timer
+	go build -C cmd/timer -o ../../
+	install
